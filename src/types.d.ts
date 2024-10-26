@@ -1,4 +1,4 @@
-export interface CardType {
+export interface ExtraCardType {
     src: string
     title: string
     description: string

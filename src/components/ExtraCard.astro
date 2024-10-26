@@ -1,37 +1,30 @@
 ---
 
-import { type CardType } from "src/types";
+import { type ExtraCardType } from "src/types";
 import Button from "@components/ui/Button.astro";
 
 interface Props {
-  card: CardType;
-  variant: "normal" | "left" | "right";
+  card: ExtraCardType;
+  class?: string;
 }
 
 
-const { card, variant } = Astro.props;
+const { card, class: className } = Astro.props;
 const { src, title, description, buttonContent, extraInfo } = card;
-
-const variants = {
-  normal: "flex-col",
-  left: "flex-row",
-  right: "flex-row-reverse",
-};
 
 ---
 
-<div class:list={["flex gap-x-16 mt-16", variants[variant]]}>
+<div class:list={["flex flex-col md:flex-row gap-x-16 mt-16", className]}>
   <picture>
-    <img src={src} alt={title} class="w-auto h-80" />
+    <img src={src} alt={title} class="w-full md:w-auto md:h-80" />
   </picture>
 
-  <div class="flex flex-col gap-y-5 max-w-80">
+  <div class="flex mt-6 md:mt-0 flex-col gap-y-5 md:max-w-80">
     {extraInfo && <h1 class="font-bold text-xl">{extraInfo}</h1>}
     <h1 class="text-2xl">{title}</h1>
     <p class="text-sm text-secondary" >{description}</p>
     <Button variant="green" class="self-start">
         {buttonContent}
     </Button>
-
   </div>
 </div>

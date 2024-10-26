@@ -1,21 +1,19 @@
 ---
-import Banner from '@components/Banner.astro';
-import Layout from '@layouts/Layout.astro';
-import Button from '@components/ui/Button.astro';
-import type { CardType } from 'src/types';
-import Card from '@components/Card.astro';
+import Banner from "@components/Banner.astro";
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/ui/Button.astro";
+import type { ExtraCardType } from "src/types";
+import ExtraCard from "@components/ExtraCard.astro";
 
+const extraCard: ExtraCardType = {
+    src: "/images/index/Starbucks-Delivers-Hero-C01-RESIZED.jpg.webp",
+    title: "Disfruta tu experiencia Starbucks® donde quieras",
+    description:
+        "¿Eres más de café, de smoothie, de latte o de Frappuccino®? No esperes más y pide Starbucks® a domicilio o para llevar.",
+    buttonContent: "Más información",
+    extraInfo: "¡Te lo llevamos!",
+};
 
-const infoCards: CardType[] = [
-    {
-        src: "/images/index/Starbucks-Delivers-Hero-C01-RESIZED.jpg.webp",
-        title: "Disfruta tu experiencia Starbucks® donde quieras",
-        description: "¿Eres más de café, de smoothie, de latte o de Frappuccino®? No esperes más y pide Starbucks® a domicilio o para llevar.",
-        buttonContent: "Más información",
-        extraInfo: "¡Te lo llevamos!"
-        
-    }
-]
 
 ---
 
@@ -23,25 +21,32 @@ const infoCards: CardType[] = [
     <Banner bannerImg="images/index/PUMPKIN-BANNER-REWARDS_724X1009.png.webp" />
     <div>
         <picture class="w-auto">
-            <img src="images/index/PUMPKIN-1024X512.png.webp" alt="index-image">
+            <img
+                src="images/index/PUMPKIN-1024X512.png.webp"
+                alt="index-image"
+            />
         </picture>
 
         <div class="px-4 md:px-20 py-8">
             <div>
-                <h1 class="text-[27px]">🍂🎃Pumpkin Spice, icónico en todas sus versiones🎃🍂</h1>
-                <p class="text-secondary text-sm py-4 leading-normal">El otoño ha llegado a Starbucks, por fin toca saborear los sabores especiados que tanto amamos. Disfruta de nuestro icónico <b class="text-black">Pumpkin Spice</b> en sus versiones Hot, Iced o Frappuccino y atrévete con nuestras deliciosas novedades: <b class="text-black">Pumpkin Cream Cold Brew</b> y <b class="text-black">Pumpkin Cream Iced Chai Latte</b>, con un toque cremoso que no te puedes perder. Ven a Starbucks y celebra el otoño con nosotros</p>
+                <h1 class="text-[27px]">
+                    🍂🎃Pumpkin Spice, icónico en todas sus versiones🎃🍂
+                </h1>
+                <p class="text-secondary text-sm py-4 leading-normal">
+                    El otoño ha llegado a Starbucks, por fin toca saborear los
+                    sabores especiados que tanto amamos. Disfruta de nuestro
+                    icónico <b class="text-black">Pumpkin Spice</b> en sus versiones
+                    Hot, Iced o Frappuccino y atrévete con nuestras deliciosas novedades:
+                    <b class="text-black">Pumpkin Cream Cold Brew</b> y <b
+                        class="text-black">Pumpkin Cream Iced Chai Latte</b
+                    >, con un toque cremoso que no te puedes perder. Ven a
+                    Starbucks y celebra el otoño con nosotros
+                </p>
             </div>
-    
-            <Button variant="green">
-                Descúbrelas
-            </Button>
 
-            <Card card={infoCards[0]} variant="left" />
+            <Button variant="green"> Descúbrelas </Button>
+
+            <ExtraCard card={extraCard} />
         </div>
-
-        
-
-        
     </div>
 </Layout>
-
