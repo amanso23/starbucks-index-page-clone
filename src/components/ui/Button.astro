@@ -1,0 +1,19 @@
+---
+interface Props{
+    class?: string
+    variant: "white" | "black" | "green"
+}
+
+const { class: className, variant } = Astro.props
+
+const variants = {
+    white: "border border-black text-black transition-colors duration-200 hover:bg-[#f7f7f7]",
+    black: "text-white bg-black transition-colors duration-200 hover:bg-[#3e3e3e]",
+    green: "border border-accent-1 text-accent-1  transition-colors duration-300 hover:bg-[#d4e9e2] self-start"
+};
+
+---
+
+<button class:list={["flex items-center rounded-full px-4 py-[5px] text-sm font-semibold", variants[variant], className]}>
+    <slot />
+</button>
