@@ -1,0 +1,61 @@
+---
+import type { CardType } from 'src/types'
+import Button from '@ui/Button.astro'
+
+interface Props{
+    card: CardType
+}
+
+const { card } = Astro.props
+
+const {
+    info,
+    variant,
+    src,
+    description,
+    title
+} = card 
+
+const variants = {
+    info: "flex-col shadow-md w-auto md:w-[49%]",
+    extra: "flex-col md:flex-row gap-x-16",
+    delivery: ""
+}
+
+const bodyVariants = {
+    info: "px-6 py-7",
+    extra: "flex flex-col gap-y-5 "
+}
+
+const buttonVariants = {
+    info: "mt-4",
+    extra: ""
+
+}
+
+let buttonContent
+
+switch(variant){
+    case "extra":
+    case "info":
+        buttonContent = "Más información"
+        break
+}
+
+---
+
+<div class:list={["flex", variants[variant]]}>
+    <picture>
+      <img src={src} alt={title} class="w-full md:w-auto"/>
+    </picture>
+  
+    <div class:list={["mt-6 md:mt-0  md:max-w-md", bodyVariants[variant]]}>
+        {info && <h1 class="text-xl font-bold">{info}</h1>}
+      
+      <h1 class="text-2xl">{title}</h1>
+      <p class="text-sm text-secondary" >{description}</p>
+      <Button variant="green" class:list={["self-start", buttonVariants[variant]]}>
+          {buttonContent}
+      </Button>
+    </div>
+  </div>

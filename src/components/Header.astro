@@ -1,5 +1,36 @@
-<header class="flex items-center px-6 py-4" >
+---
+import Starbucks from "@icons/Starbucks.astro";
+import Nav from "@components/Nav.astro";
+import Button from "@components/ui/Button.astro";
+import Location from "@icons/Location.astro";
 
+---
 
+<header class="flex items-center justify-between px-6 py-4 md:px-14 md:py-6 bg-primary drop-shadow-md" >
+    <div class="flex items-center gap-x-10">
+      <a href="/">
+        <Starbucks class="w-auto h-[40px] md:h-[51px]" />
+      </a>
+      <Nav />
+    </div>
 
+    <div class="hidden xl:flex items-center gap-x-10 transition-colors duration-200">
+      <a 
+        href="https://www.starbucks.es/store-locator" 
+        class="flex items-center gap-x-2 hover:text-secondary hover:fill-secondary"
+      >
+          <Location class="size-6" />
+          <p class="text-sm font-semibold">Encuéntranos</p>
+      </a>
+
+      <div class="flex items-center gap-x-3">
+        <Button variant="white" >
+          Inicia sesión
+        </Button>
+        <Button variant="black" >
+          Únete Ahora
+        </Button>
+      </div>
+    </div>
+  
 </header>

@@ -1,0 +1,18 @@
+---
+import type { CardType } from 'src/types'
+import Card from '@ui/Card.astro'
+
+
+interface Props{
+    cards: CardType[]
+}
+
+const { cards } = Astro.props
+
+---
+
+<section class="flex justify-between gap-y-4 flex-wrap w-full py-6">
+    {cards.length > 0 && cards.map((card) => (
+        <Card card={card}/>
+    ))}
+</section>
