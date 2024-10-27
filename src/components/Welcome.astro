@@ -1,6 +1,5 @@
 ---
 import Container from "@components/Container.astro";
-import { render } from "astro:content";
 import type { Welcome } from "src/types";
 import Button from "@components/ui/Button.astro";
 
@@ -10,7 +9,7 @@ interface Props {
 
 const { welcome } = Astro.props;
 
-const { Content } = await render(welcome);
+const { Content } = await welcome.render();
 
 const {
     data
