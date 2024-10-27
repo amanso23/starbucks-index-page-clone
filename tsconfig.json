@@ -6,8 +6,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@icons/*": ["src/icons/*"],
+      "@ui/*": ["src/components/ui/*"]
     }
-      
   }
-
 }
