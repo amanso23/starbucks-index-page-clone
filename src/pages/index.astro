@@ -6,6 +6,7 @@ import Welcome from "@components/Welcome.astro";
 import Container from "@components/Container.astro";
 import Card from "@ui/Card.astro";
 import CardSection from "@components/CardSection.astro";
+import Footer from "@components/Footer.astro";
 
 const page = await getPage("index")
 
@@ -30,6 +31,7 @@ const {
         <Container>
             {extraCard && <Card card={extraCard}  /> }
             {cards && <CardSection cards={cards} /> }
+            <Footer />
         </Container>       
     </div>
 </Layout>
