@@ -11,7 +11,7 @@ const { cards } = Astro.props
 
 ---
 
-<section class="flex justify-between gap-y-4 flex-wrap w-full py-6">
+<section class="flex justify-between gap-y-4 flex-wrap w-full py-2">
     {cards.length > 0 && cards.map((card) => (
         <Card card={card}/>
     ))}
