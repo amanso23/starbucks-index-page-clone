@@ -14,6 +14,7 @@ export const getPage= async(pageName: "index"): Promise<Page> =>  {
     const pageInfo: PageInfo = {
         title: pageEntry.data.title,
         banner: pageEntry.data.banner,
+        linksButtons: pageEntry.data.linksButtons
     };
 
     const cards = page.find((entry: { slug: string; }) => entry.slug === 'cards');

@@ -3,12 +3,18 @@ import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 export interface PageInfo {
     title: string
     banner: string
+    linksButtons: LinkButton[]
 }
 
 export interface WelcomeData  {
-    src: string
+    src: string;
     title: string;
-    buttonContent: string;
+    linkButton: LinkButton
+}
+
+export interface LinkButton {
+    href: string;
+    content: string;
 }
 
 export interface Welcome {
@@ -20,13 +26,13 @@ export interface Welcome {
     render(): Promise<RenderResult>;
 }
 
-
 export interface CardType {
     info?: string
     variant: Variant
     src: string
     title: string;
     description: string;
+    href: string;
 }
 
 type Variant = 

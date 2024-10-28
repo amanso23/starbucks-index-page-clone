@@ -1,0 +1,117 @@
+---
+import Arrow from "@icons/Arrow.astro";
+
+
+const preFooterItems = [
+    {
+        title: "Sobre Nosotros",
+        extraLinks: [
+            {
+                label: "Acerca de Starbucks®",
+                href: "https://www.starbucks.es/sobre-nosotros",
+            },
+            {
+                label: "Sala de Prensa",
+                href: "https://www.starbucks.es/sala-prensa",
+            },
+            {
+                label: "Atención al Cliente",
+                href: "https://www.starbucks.es/atencion-cliente",
+            },
+            {
+                label: "Preguntas Frecuentes",
+                href: "https://www.starbucks.es/faqs",
+            },
+        ],
+    },
+    {
+        title: "Información Nutricional y Alérgenos",
+        extraLinks: [
+            {
+                label: "Información Nutricional",
+                href: "https://www.starbucks.es/informacion-nutricional",
+            },
+            {
+                label: "Alérgenos",
+                href: "https://alergenos.grupovips.com/index.html?brand=starbucks",
+            },
+        ],
+    },
+    {
+        title: "Trabaja con Nosotros",
+        extraLinks: [
+            {
+                label: "Starbucks® Partners",
+                href: "https://starbuckspartners.es/trabajar-starbucks",
+            },
+        ],
+    },
+    {
+        title: "Responsabilidad",
+        extraLinks: [
+            {
+                label: "Nuestra Responsabilidad",
+                href: "/nuestra-responsabilidad",
+            },
+            {
+                label: "Starbucks on the Record",
+                href: "https://www.starbucks.es/starbucks-y-la-verdad",
+            },
+        ],
+    },
+];
+---
+
+<section class="border-b-2 border-[#cccccc]">
+    <ul class="flex flex-col gap-y-12 py-12">
+        {
+            preFooterItems.map((item) => (
+                <li>
+                    <span class="flex items-center justify-between ">
+                        <h3 class="text-2xl title cursor-pointer">
+                            {item.title}
+                        </h3>
+                        <Arrow class="size-10 p-2 rounded-full fill-black transition-colors duration-300 hover:bg-[#edebe9] cursor-pointer arrow transform" />
+                    </span>
+                    <ul class="hidden flex-col gap-y-8 py-10 extra-links">
+                        {item.extraLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class="text-sm text-secondary hover:text-gray-900 font-semibold"
+                                >
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </li>
+            ))
+        }
+    </ul>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const arrow = document.querySelectorAll(".arrow");
+        const extraLinks = document.querySelectorAll(".extra-links");
+
+        arrow.forEach((arr, index) => {
+            const toggleLinks = () => {
+                extraLinks[index].classList.toggle("hidden");
+                extraLinks[index].classList.toggle("flex");
+                arr.classList.toggle("rotate-180");
+                if (arr.classList.contains("rotate-180")) {
+                    arr.classList.remove("animate-rotate-out");
+                    arr.classList.add("animate-rotate-in");
+                } else {
+                    arr.classList.remove("animate-rotate-in");
+                    arr.classList.add("animate-rotate-out");
+                }
+            };
+            arr.addEventListener("click", toggleLinks);
+            const titleElement = arr.closest("li")?.querySelector(".title");
+            titleElement?.addEventListener("click", toggleLinks);
+        });
+    });
+</script>

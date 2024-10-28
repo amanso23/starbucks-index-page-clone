@@ -1,0 +1,48 @@
+---
+
+const footerItems = [
+    {
+        label: "Contacto",
+        href: "https://www.starbucks.es/atencion-cliente"
+    },
+    {
+        label: "Política de Privacidad",
+        href: "https://www.starbucks.es/politica-de-privacidad"
+    },
+    {
+        label: "Política de Cookies",
+        href: "https://www.starbucks.es/cookies"
+    },
+    {
+        label: "Configurador de Cookies",
+        href: "#"
+    },
+    {
+        label: "Sitemap",
+        href: "https://www.starbucks.es/sitemap.xml"
+    },
+    {
+        label: "Aviso Legal, y Condiciones de Compra",
+        href: "https://www.starbucks.es/aviso-legal-condiciones-compra"
+    },
+    {
+        label: "Condiciones generales del programa Rewards",
+        href: "https://www.starbucks.es/terminos-condiciones-rewards"
+    }
+];
+
+---
+
+<section class="mb-44">
+        <ul class="flex flex-col gap-y-6">
+            {
+                footerItems.map((item) => (
+                    <li>
+                        <a href={item.href} class="text-accent-2 font-semibold text-sm transition-colors duration-300 hover:text-secondary">
+                            {item.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+</section>

@@ -1,6 +1,5 @@
 ---
 import Starbucks from "@icons/Starbucks.astro";
-import Nav from "@components/Nav.astro";
 import Button from "@components/ui/Button.astro";
 import Location from "@icons/Location.astro";
 
@@ -8,10 +7,7 @@ import Location from "@icons/Location.astro";
 
 <header class="flex items-center justify-between px-6 py-4 md:px-14 md:py-6 bg-primary drop-shadow-md" >
     <div class="flex items-center gap-x-10">
-      <a href="/">
-        <Starbucks class="w-auto h-[40px] md:h-[51px]" />
-      </a>
-      <Nav />
+      <Starbucks class="w-auto h-[40px] md:h-[51px]" />
     </div>
 
     <div class="hidden xl:flex items-center gap-x-10 transition-colors duration-200">
@@ -24,13 +20,16 @@ import Location from "@icons/Location.astro";
       </a>
 
       <div class="flex items-center gap-x-3">
-        <Button variant="white" >
-          Inicia sesión
-        </Button>
-        <Button variant="black" >
-          Únete Ahora
-        </Button>
+          <a href="https://www.starbucks.es/account/login">
+            <Button variant="white" >
+              Inicia sesión
+            </Button>
+          </a>
+          <a href="https://www.starbucks.es/account/create">
+            <Button variant="black" >
+              Únete Ahora
+            </Button>
+          </a>
       </div>
     </div>
-  
 </header>
