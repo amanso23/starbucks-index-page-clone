@@ -16,9 +16,6 @@ export default {
 			animation: {
 				'rotate-in': 'rotate-in 0.2s',
 				'rotate-out': 'rotate-out 0.2s ',
-				'fade-in': 'fade-in 0.2s',
-				'fade-out': 'fade-in 0.2s reverse',
-
 			},
 			keyframes: {
 				'rotate-in': {
