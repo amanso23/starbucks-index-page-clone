@@ -13,7 +13,8 @@ const {
     variant,
     src,
     description,
-    title
+    title,
+    href
 } = card 
 
 const variants = {
@@ -54,8 +55,10 @@ switch(variant){
       
       <h1 class="text-2xl">{title}</h1>
       <p class="text-sm text-secondary" >{description}</p>
-      <Button variant="green" class:list={["self-start", buttonVariants[variant]]}>
-          {buttonContent}
-      </Button>
+      <a href={href}>
+        <Button variant="green" class:list={["self-start", buttonVariants[variant]]}>
+            {buttonContent}
+        </Button>
+    </a>
     </div>
   </div>

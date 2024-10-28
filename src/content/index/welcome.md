@@ -1,7 +1,9 @@
 ---
 src: 'images/index/PUMPKIN-1024X512.png.webp'
 title: '🍂🎃Pumpkin Spice, icónico en todas sus versiones🎃🍂'
-buttonContent: 'Descúbrelas'
+linkButton: 
+    href: 'https://www.starbucks.es/bebidas-fall'
+    content: 'Descúbrelas'
 ---
 
 <div class="text-sm text-secondary">

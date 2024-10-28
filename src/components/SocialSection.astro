@@ -1,0 +1,48 @@
+---
+import Container from "@components/Container.astro";
+import Facebook from "@icons/Facebook.astro";
+import Instagram from "@icons/Instagram.astro";
+import TikTok from "@icons/TikTok.astro";
+import Twitter from "@icons/Twitter.astro";
+
+const socials = [
+    {
+        icon: Facebook,
+        href: "https://www.facebook.com/StarbucksEspana"
+    },
+    {
+        icon: Instagram,
+        href: "https://www.instagram.com/starbucks_es/"
+    },
+    {
+        icon: Twitter,
+        href: "https://twitter.com/Starbucks_es"
+    },
+    {
+        icon: TikTok,
+        href: "https://www.tiktok.com/@starbucks_es"
+    }
+]
+
+
+---
+
+<section>
+    <Container>
+        <ul class="flex items-center gap-x-3 ">
+            {
+                socials.map((social) => (
+                    <li>
+                        <a href={social.href}>
+                            <social.icon class="size-10" />
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        
+    </Container>
+
+
+</section>

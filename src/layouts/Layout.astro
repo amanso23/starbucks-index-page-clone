@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico?v=2" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
@@ -34,11 +34,9 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-
 	html{
 		font-family: "SoDoSans"
 	}
-
 	@font-face {
 		font-family: "SoDoSans";
 		src: url("fonts/SoDoSans-Light.woff2") format("woff2");

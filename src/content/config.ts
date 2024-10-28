@@ -4,6 +4,12 @@ const pageInfo = defineCollection({
     schema: z.object({
         title: z.string(),
         banner: z.string(),
+        linksButtons: z.array(
+            z.object({
+                href: z.string(),
+                content: z.string()
+            })
+        )
     })
 })
 
@@ -11,7 +17,10 @@ const welcome = defineCollection({
     schema: z.object({
         src: z.string(),
         title: z.string(),
-        buttonContent: z.optional(z.string())
+        linkButton: z.object({
+            href: z.string(),
+            content: z.string()
+        })
     })
 })
 
@@ -20,7 +29,8 @@ const extraCard = defineCollection({
         src: z.string(),
         info: z.string(),
         title: z.string(),
-        description: z.string()
+        description: z.string(),
+        href: z.string(),
     })
 })
 
@@ -30,7 +40,8 @@ const cards = defineCollection({
             z.object({
                 src: z.string(),
                 title: z.string(),
-                description: z.string()
+                description: z.string(),
+                href: z.string(),
             })
         )
     })
