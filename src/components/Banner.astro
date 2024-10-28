@@ -1,13 +1,28 @@
 ---
+import type { LinkButton } from 'src/types'
+import Button from '@ui/Button.astro'
+
 
 interface Props{
     bannerImg: string
+    linksButtons: LinkButton[]
 }
 
-const { bannerImg } = Astro.props
+const { bannerImg, linksButtons } = Astro.props
 
 ---
 
-<picture class="lg:sticky lg:top-0 w-full lg:h-screen">
-    <img src={bannerImg} alt="banner-img" class="w-full h-screen">
+<picture class="relative lg:sticky lg:top-0 w-full lg:h-screen">
+    <img src={bannerImg} alt="banner-img" class="w-full h-screen brightness-[70%]">
+    <div class="absolute lg:fixed bottom-6 left-16 flex items-center gap-x-3">
+        {linksButtons.map(({ href, content }) => (
+            <a href={href}>
+                <Button variant="linkButton">
+                    {content}
+                </Button>
+            </a>
+        ))}
+
+    </div>
+
 </picture>

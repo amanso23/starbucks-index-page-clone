@@ -1,5 +1,5 @@
 ---
-import Container from "@components/Container.astro";
+
 import Facebook from "@icons/Facebook.astro";
 import Instagram from "@icons/Instagram.astro";
 import TikTok from "@icons/TikTok.astro";
@@ -28,7 +28,6 @@ const socials = [
 ---
 
 <section>
-    <Container>
         <ul class="flex items-center gap-x-3 ">
             {
                 socials.map((social) => (
@@ -40,9 +39,4 @@ const socials = [
                 ))
             }
         </ul>
-
-        
-    </Container>
-
-
 </section>

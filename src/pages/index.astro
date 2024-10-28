@@ -10,11 +10,16 @@ import CardSection from "@components/CardSection.astro";
 const page = await getPage("index");
 
 const { pageInfo, welcome, extraCard, cards } = page;
-const { banner, title,  } = pageInfo;
+const { banner, title, linksButtons } = pageInfo;
 ---
 
 <Layout title={title}>
-    <div slot="banner"><Banner bannerImg={banner} /></div>
+    <div slot="banner">
+        <Banner 
+            bannerImg={banner} 
+            linksButtons={linksButtons} 
+        />
+    </div>
     <div slot="content">
         {welcome && <Welcome welcome={welcome} />}
         <Container>
