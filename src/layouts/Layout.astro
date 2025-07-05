@@ -1,74 +1,70 @@
 ---
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header.astro';
-import { ViewTransitions } from 'astro:transitions';
-
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.ico?v=2" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body>
-		<Header />
-		<main class="grid grid-cols-1 lg:grid-cols-[auto,1fr]">
-			<slot name="banner" />
-			<div class="flex flex-col gap-y-16 bg-[#f7f7f7]">
-				<slot name="content" />
-				<Footer />
-			</div>
-		</main>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico?v=2" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <main class="grid grid-cols-1 lg:grid-cols-[auto,1fr]">
+      <slot name="banner" />
+      <div class="flex flex-col gap-y-16 bg-[#f7f7f7]">
+        <slot name="content" />
+        <Footer />
+      </div>
+    </main>
+  </body>
 </html>
 <style is:global>
-	html{
-		font-family: "SoDoSans"
-	}
-	@font-face {
-		font-family: "SoDoSans";
-		src: url("/public/fonts/SoDoSans-Light.woff2") format("woff2");
-		font-weight: 300;
-		font-display: swap;
-	}
+  html {
+    font-family: "SoDoSans";
+  }
+  @font-face {
+    font-family: "SoDoSans";
+    src: url("/public/fonts/SoDoSans-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+  }
 
-	@font-face {
-		font-family: "SoDoSans";
-		src: url("/public/fonts/SoDoSans-Regular.woff2") format("woff2");
-		font-weight: 500;
-		font-display: swap;
-		
-	}
-	@font-face {
-		font-family: "SoDoSans";
-		src: url("/fonts/SoDoSans-SemiBold.woff2") format("woff2");
-		font-weight: 600;
-		font-display: swap;
-		
-	}
-	@font-face {
-		font-family: "SoDoSans";
-		src: url("/public/fonts/SoDoSans-Bold.woff2") format("woff2");
-		font-weight: 700;
-		font-display: swap;
-		
-	}@font-face {
-		font-family: "SoDoSans";
-		src: url("/public/fonts/SoDoSans-Black.woff2") format("woff2");
-		font-weight: 900;
-		font-display: swap;
-		
-	}
+  @font-face {
+    font-family: "SoDoSans";
+    src: url("/public/fonts/SoDoSans-Regular.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "SoDoSans";
+    src: url("/fonts/SoDoSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "SoDoSans";
+    src: url("/public/fonts/SoDoSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "SoDoSans";
+    src: url("/public/fonts/SoDoSans-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-display: swap;
+  }
 </style>
